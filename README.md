@@ -76,6 +76,6 @@ terraform {
 11. Execute the command to terminate the Terraform Instance
     Command:
 ```
-    terraform destroy
+   terraform destroy
 ```
    You will notice the EC2 instance is terminated
