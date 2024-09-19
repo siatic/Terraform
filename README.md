@@ -1,37 +1,46 @@
 1. Create IAM User
-    IAM ->> Create User ->> "Username" ->> Attach policies directly (AmazonEC2FullAccess) ->> Create user.
-
+```
+IAM ->> Create User ->> "Username" ->> Attach policies directly (AmazonEC2FullAccess) ->> Create user.
+```
 2. Create an Access key for the User
-    User ->> Security credentials ->> Create Access Key ->> Use case: Command Line Interface (CLI) ->> Create Access Key ->> 
-    Download .csv file
 
+``` 
+User ->> Security credentials ->> Create Access Key ->> Use case: Command Line Interface (CLI) ->> Create Access Key ->> 
+Download .csv file
+```
 3. Launch an EC2 Instance and connect using SSH
 
 4. Install AWS-CLI and Configure AWS
-   Commands:
+```
+Commands:
    sudo yum install awscli -y
    aws --version
    aws configure
+```
 
 5. Enter Access Key (mentioned in CSV file), Secret Access Key (mentioned in CSV file), Region-name and Output Format (json)
 
 6. Install Terraform
-   Commands:
+```
+Commands:
    sudo yum install -y yum-utils shadow-utils
    sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
    sudo yum -y install terraform
    terraform --version
+```
 
 7. Create a Project directory and .tf file
-   Commands:
+```
+Commands:
    mkdir Project
    cd Project
    touch main.tf
    sudo nano main.tf
+```
 
 8. Add the code below in main.tf file:
-
-   terraform {
+```
+terraform {
      required_providers {
        aws = {
          source = "hashicorp/aws"
@@ -52,18 +61,22 @@
        Name = "Terraform-Instance"
      }
    }
-
+```
 
 9. Save the main.tf file and execute the commands below:
-   Commands:
+```
+Commands:
    terraform init
    terraform plan
    terraform apply
+```
 
 10. Check the AWS Console to verify that a new EC2 instance has been created
 
 11. Execute the command to terminate the Terraform Instance
-    Command:
+```
+Command:
     terraform destroy
 
-    You will notice the EC2 instance is terminated.
+You will notice the EC2 instance is terminated.
+```
