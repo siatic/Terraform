@@ -78,4 +78,4 @@ terraform {
 ```
    terraform destroy
 ```
-   You will notice the EC2 instance is terminated
+12. You will notice the EC2 instance is terminated
