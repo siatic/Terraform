@@ -1,3 +1,5 @@
+## EC2 Infrastructure using Terraform
+
 1. Create IAM User
 ```
    IAM ->> Create User ->> "Username" ->> Attach policies directly (AmazonEC2FullAccess) ->> Create user.
